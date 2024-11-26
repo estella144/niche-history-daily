@@ -108,6 +108,12 @@ h1, h2, h3, .logo {
   text-decoration: none;
   color: #3498db;
 }
+
+.read-more-link:hover {
+  text-decoration: underline;
+  color: #2980b9;
+}
+
 footer {
   text-align: center;
   padding: 1em;
