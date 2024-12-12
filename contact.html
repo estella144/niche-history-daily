@@ -25,6 +25,7 @@
         </div>
       </div>
     </div>
+    <p id="current-date-time"></p>
     <nav>
       <a href="contact.html">Contact</a>
       <a href="submit.html">Submit</a>
@@ -33,8 +34,30 @@
 
   <main>
     <h1>Contact</h1>
-    <p>Coming soon!</p>
+
+    <p>All fields are required.</p>
+    <p id="contact-form-alert"></p>
+
+    <form id="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="contact-form-name" required placeholder="Enter your name">
+
+      <label for="subject">Subject:</label>
+      <input type="text" name="subject" id="contact-form-subject" required placeholder="Enter the subject of your message">
+
+      <label for="entry-text">Text:</label>
+      <textarea type="text" name="message-text" id="contact-form-text" rows="5" required placeholder="Enter your message"></textarea>
+
+      <div style="display: flex; gap: 10px;">
+        <button type="button" class="form-button" id="submit-button">Submit (opens email client)</button>
+        <button type="reset" class="form-button">Reset</button>
+      </div>
+    </form>
+
+    <p id="contact-form-alert2"></p>
   </main>
 
   <script src="js/dropdown.js"></script>
+  <script src="js/contact-form.js"></script>
+  <script src="js/update-datetime.js"></script>
 </body>
