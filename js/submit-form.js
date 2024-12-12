@@ -1,6 +1,6 @@
 document.getElementById('submit-button').addEventListener('click', function() {
 
-  console.log('clicked')
+  console.log('clicked');
 
   const name = document.getElementById('submit-form-name');
   const title = document.getElementById('submit-form-title');
@@ -9,9 +9,9 @@ document.getElementById('submit-button').addEventListener('click', function() {
   const entry = document.getElementById('submit-form-text');
 
   const alertDisplay = document.getElementById('submit-form-alert');
-  const alertDisplay2 = document.getElementById('submit-form-alert2')
+  const alertDisplay2 = document.getElementById('submit-form-alert2');
 
-  console.log('values obtained')
+  console.log('values obtained');
 
   if (!name.value.trim()) {
     name.style.border = '1px solid red';
@@ -19,7 +19,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
     return;
   } else {
     name.style.border = '';
-    console.log('name passed')
+    console.log('name passed');
   }
 
   if (!title.value.trim()) {
@@ -28,7 +28,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
     return;
   } else {
     title.style.border = '';
-    console.log('title passed')
+    console.log('title passed');
   }
 
   if (!date.value.trim()) {
@@ -55,17 +55,18 @@ document.getElementById('submit-button').addEventListener('click', function() {
     entry.style.border = '';
   }
 
+  alertDisplay.innerHTML = '';
   alertDisplay2.innerHTML = '<b>Success!</b> Please wait. It may take a while to open your email client.';
 
-  const emailBody = `Name: ${name}%0D%0A` +
-                    `Title: ${title}%0D%0A` +
-                    `Intended date: ${date}%0D%0A` +
-                    `Summary: ${summary}%0D%0A` +
-                    `Text: ${entry}%0D%0A`;
+  const emailBody = `Name: ${encodeURIComponent(name.value)}%0D%0A` +
+                    `Title: ${encodeURIComponent(title.value)}%0D%0A` +
+                    `Intended date: ${encodeURIComponent(date.value)}%0D%0A` +
+                    `Summary: ${encodeURIComponent(summary.value)}%0D%0A` +
+                    `Text: ${encodeURIComponent(entry.value)}%0D%0A`;
 
-  const emailSubject = `Submission: ${title}`;
+  const emailSubject = `Submission: ${encodeURIComponent(title.value)}`;
 
-  const mailtoLink = `mailto:olivern0@proton.me`;
+  const mailtoLink = `mailto:olivern0@proton.me?subject=${emailSubject}&body=${emailBody}`;
 
   console.log('done')
 
