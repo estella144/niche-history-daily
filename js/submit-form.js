@@ -9,6 +9,7 @@ document.getElementById('submit-button').addEventListener('click', function() {
   const entry = document.getElementById('submit-form-text');
 
   const alertDisplay = document.getElementById('submit-form-alert');
+  const alertDisplay2 = document.getElementById('submit-form-alert2')
 
   console.log('values obtained')
 
@@ -53,6 +54,8 @@ document.getElementById('submit-button').addEventListener('click', function() {
   } else {
     entry.style.border = '';
   }
+
+  alertDisplay2.innerHTML = '<b>Success!</b> Please wait. It may take a while to open your email client.';
 
   const emailBody = `Name: ${name}%0D%0A` +
                     `Title: ${title}%0D%0A` +
