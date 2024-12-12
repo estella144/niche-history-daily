@@ -67,6 +67,14 @@ header .dropdown .dropdown-content a {
   padding: 10px;
 }
 
+header .dropdown .dropdown-content a:hover {
+  text-decoration: underline;
+}
+
+header .dropdown .dropdown-content a:active {
+  font-weight: bold;
+}
+
 header nav a {
   color: white;
   text-decoration: none;
